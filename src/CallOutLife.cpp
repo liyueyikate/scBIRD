@@ -7,9 +7,9 @@ using namespace std;
 
 // [[Rcpp::export]]
 
-int predict(Rcpp::CharacterVector infile0, Rcpp::CharacterVector outfile0, Rcpp::CharacterVector outfile_expr0,
+int predict(Rcpp::CharacterVector infile0, Rcpp::CharacterVector outfile0, Rcpp::CharacterVector libfile0,Rcpp::CharacterVector outfile_expr0,
  int locus_model=0, double up_bound=14, int match_mode=0,int write_flag = 0){
-  char libfile[255]="./src/human_hg19_model.bin";
+  char libfile[255];
   /*
   double up_bound = 14;
   int write_flag = 0;
@@ -27,6 +27,8 @@ int predict(Rcpp::CharacterVector infile0, Rcpp::CharacterVector outfile0, Rcpp:
   strcpy(outfile, outfile_tmp.c_str());
   string outfile_expr_tmp = Rcpp::as<string>(outfile_expr0);
   strcpy(outfile_expr, outfile_expr_tmp.c_str());
+  string libfile_tmp = Rcpp::as<string>(libfile0);
+  strcpy(libfile,libfile_tmp.c_str());
 
 /*
 cout<< libfile<<endl;
