@@ -20,7 +20,7 @@ Using BIRD to predict chromatin accessibility
 
 ``` r
 library(scBIRD)
-predict("/path/to/expression_matrix/","/path/to/output/file/","/path/to/model/","/path/to/expression_matrix_match/",locus_model=0,double up_bound=14,      
-        match_mode=0, write_flag = 0)
+predict("/path/to/expression_matrix/","/path/to/output/file/","/path/to/model/","/path/to/expression_matrix_match/",
+locus_model=0,double up_bound=14,match_mode=0, write_flag = 0)
 ```
 
