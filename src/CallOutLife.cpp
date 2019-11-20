@@ -213,8 +213,8 @@ cout<< libfile<<endl;
     }
   }
 
-  strcpy(outfile_expr, infile);
-  strcat(outfile_expr, ".match.txt");
+  //strcpy(outfile_expr, infile);
+  //strcat(outfile_expr, ".match.txt");
   WriteExpr(data_norm, exonin.sample_name, TC_id, outfile_expr, predictor_size, sample_size);
 
   for (int i = 0; i < sample_size; i++)
