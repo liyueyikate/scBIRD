@@ -16,7 +16,7 @@ devtools::install_github("liyueyikate/scBIRD")
 
 ## Example
 
-Using BIRD to predict chromatin accessibility
+Using BIRD to predict chromatin accessibility.
 
 ``` r
 library(scBIRD)
