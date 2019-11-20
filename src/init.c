@@ -8,10 +8,10 @@
 */
 
 /* .Call calls */
-extern SEXP _scBIRD_predict(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP _scBIRD_predict(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_scBIRD_predict", (DL_FUNC) &_scBIRD_predict, 7},
+    {"_scBIRD_predict", (DL_FUNC) &_scBIRD_predict, 8},
     {NULL, NULL, 0}
 };
 
