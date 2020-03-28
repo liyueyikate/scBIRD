@@ -42,9 +42,9 @@ int CheckTCid(char **lib_TC, std::vector<std::string> in_TC, int Length)
 			return 1;
 		}
 	}
-
 	return 0;
 }
+
 
 
 //match input data with separate character
@@ -286,7 +286,7 @@ void QuantileNorm(double *indata, double *quantile, int dataLength)
 {
 	int *index = new int[dataLength];
 	double *indata_copy = new double[dataLength];
-    double *ranks = new double[dataLength];
+  double *ranks = new double[dataLength];
 
 	for (int i = 0; i < dataLength; i++)
 	{
@@ -393,7 +393,7 @@ void ClusterMean(double **data_matrix, double **data_mean, int *cluster_idx, int
 
 
 //read in the pre-bfuilt prediction model file
-int ReadinModel(char filename[255], double *quantile_in, double *exon_mean, double *exon_sd, double **coef, double *DNase_mean, double *DNase_sd, int **pre_idx, char **TC_id, int *cluster_idx, char **select_loci, int p_length, int var_length, int loci_length, double **dis_matrix, int **DH_cluster, double **DH_coef1, double **DH_coef2, double **DH_coef3, int **DH_pre_idx1, int **DH_pre_idx2, int **DH_pre_idx3, int DH_num1, int DH_num2, int DH_num3)
+int ReadinModel(char filename[255], double *quantile_in, double *exon_mean, double *exon_sd, double **coef, double *DNase_mean, double *DNase_sd, int **pre_idx, char **TC_id, int *cluster_idx, char **select_loci, int p_length, int var_length, int loci_length, double **dis_matrix, int **DH_cluster, double **DH_coef1, double **DH_coef2, double **DH_coef3, int **DH_pre_idx1, int **DH_pre_idx2, int **DH_pre_idx3, int DH_num1, int DH_num2, int DH_num3 )
 {
 	int dump[8];
 	FILE *pFile;
@@ -419,6 +419,7 @@ int ReadinModel(char filename[255], double *quantile_in, double *exon_mean, doub
 		for (int k = 0; k < loci_length; k++)
 		{
 			fread(select_loci[k], sizeof(char), 30, pFile);
+
 		}
 		for (int k = 0; k < p_length; k++)
 		{
@@ -456,16 +457,17 @@ int ReadinModel(char filename[255], double *quantile_in, double *exon_mean, doub
 		{
 			fread(DH_pre_idx3[k], sizeof(int), DH_num3, pFile);
 		}
+
 	}
 	else
 	{
 		std::cout << "Error! File " << filename << " not found!" << std::endl;
 		return 1;
 	}
-
 	fclose(pFile);
 	return 0;
 }
+
 
 
 //read the parameters used in the prediction model
@@ -487,7 +489,6 @@ int ReadPar(char filename[255], int &loci_size, int &predictor_size, int &cluste
 		DH_num2 = param[6];
 		DH_num3 = param[7];
 		fclose(pFile);
-
 	}
 	else
 	{
@@ -542,7 +543,7 @@ int WriteWIG(double **data_out, char **select_idx, std::vector<std::string> outn
 	int startsite, count;
 	double value;
 	FILE * pFile;
-
+ // FILE * bFile;
 	//standard output
 	if (flag != 1)
 	{
@@ -593,7 +594,48 @@ int WriteWIG(double **data_out, char **select_idx, std::vector<std::string> outn
 		}
 
 
+
 	}
+	//binary output
+
+  else if (flag==1)
+  {
+    //pFile = fopen(outfile, "wb");
+    std::ofstream myFile (outfile, std::ios::out | std::ios::binary);
+    if (myFile.is_open())
+    {
+      for (int i = 0; i < loci_length; i++)
+      {
+
+        for (int j = 0; j < sample_size-1; j++)
+        {
+          value = data_out[j][i];
+          if (value < 0)
+          {
+            value = 0;
+          }
+          else if (value > up_bound)
+          {
+            value = up_bound;
+          }
+          myFile.write((char*)&value, sizeof value);   //report original output value, log2(x+1) transformed.
+        }
+
+        value = data_out[sample_size-1][i];
+        if (value < 0)
+        {
+          value = 0;
+        }
+        else if (value > up_bound)
+        {
+          value = up_bound;
+        }
+        myFile.write( (char*)&value, sizeof value);
+
+      }
+      myFile.close();
+    }
+  }
 	else    //WIG output
 	{
 		std::vector<std::vector<int> > location;

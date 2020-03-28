@@ -5,21 +5,50 @@
 
 using namespace Rcpp;
 
-// predict
-int predict(Rcpp::CharacterVector infile0, Rcpp::CharacterVector outfile0, Rcpp::CharacterVector libfile0, Rcpp::CharacterVector outfile_expr0, int locus_model, double up_bound, int match_mode, int write_flag);
-RcppExport SEXP _scBIRD_predict(SEXP infile0SEXP, SEXP outfile0SEXP, SEXP libfile0SEXP, SEXP outfile_expr0SEXP, SEXP locus_modelSEXP, SEXP up_boundSEXP, SEXP match_modeSEXP, SEXP write_flagSEXP) {
+// bird
+Rcpp::NumericMatrix bird(Rcpp::CharacterVector infile0, Rcpp::CharacterVector outfile0, Rcpp::CharacterVector outfile_expr0, Rcpp::CharacterVector libfile0, int locus_model, double up_bound, int match_mode, int write_flag);
+RcppExport SEXP _scBIRD_bird(SEXP infile0SEXP, SEXP outfile0SEXP, SEXP outfile_expr0SEXP, SEXP libfile0SEXP, SEXP locus_modelSEXP, SEXP up_boundSEXP, SEXP match_modeSEXP, SEXP write_flagSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type infile0(infile0SEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type outfile0(outfile0SEXP);
-    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type libfile0(libfile0SEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type outfile_expr0(outfile_expr0SEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type libfile0(libfile0SEXP);
     Rcpp::traits::input_parameter< int >::type locus_model(locus_modelSEXP);
     Rcpp::traits::input_parameter< double >::type up_bound(up_boundSEXP);
     Rcpp::traits::input_parameter< int >::type match_mode(match_modeSEXP);
     Rcpp::traits::input_parameter< int >::type write_flag(write_flagSEXP);
-    rcpp_result_gen = Rcpp::wrap(predict(infile0, outfile0, libfile0, outfile_expr0, locus_model, up_bound, match_mode, write_flag));
+    rcpp_result_gen = Rcpp::wrap(bird(infile0, outfile0, outfile_expr0, libfile0, locus_model, up_bound, match_mode, write_flag));
+    return rcpp_result_gen;
+END_RCPP
+}
+// getLoci
+Rcpp::StringVector getLoci(Rcpp::CharacterVector libfile0);
+RcppExport SEXP _scBIRD_getLoci(SEXP libfile0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type libfile0(libfile0SEXP);
+    rcpp_result_gen = Rcpp::wrap(getLoci(libfile0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// bird_select_loci
+Rcpp::NumericMatrix bird_select_loci(Rcpp::CharacterVector infile0, int loci_size_tmp, Rcpp::NumericVector select_loci_tmp, Rcpp::CharacterVector libfile0, int locus_model, double up_bound, int match_mode, int write_flag);
+RcppExport SEXP _scBIRD_bird_select_loci(SEXP infile0SEXP, SEXP loci_size_tmpSEXP, SEXP select_loci_tmpSEXP, SEXP libfile0SEXP, SEXP locus_modelSEXP, SEXP up_boundSEXP, SEXP match_modeSEXP, SEXP write_flagSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type infile0(infile0SEXP);
+    Rcpp::traits::input_parameter< int >::type loci_size_tmp(loci_size_tmpSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type select_loci_tmp(select_loci_tmpSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type libfile0(libfile0SEXP);
+    Rcpp::traits::input_parameter< int >::type locus_model(locus_modelSEXP);
+    Rcpp::traits::input_parameter< double >::type up_bound(up_boundSEXP);
+    Rcpp::traits::input_parameter< int >::type match_mode(match_modeSEXP);
+    Rcpp::traits::input_parameter< int >::type write_flag(write_flagSEXP);
+    rcpp_result_gen = Rcpp::wrap(bird_select_loci(infile0, loci_size_tmp, select_loci_tmp, libfile0, locus_model, up_bound, match_mode, write_flag));
     return rcpp_result_gen;
 END_RCPP
 }

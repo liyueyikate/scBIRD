@@ -1,13 +1,27 @@
 Package: scBIRD
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
-Version: 1.0
-Date: 2019-11-19
-Author: Your Name
-Maintainer: Your Name <your@email.com>
-Description: One paragraph description of what the
-      package does as one or more full sentences.
-License: GPL (>= 2)
-Imports: Rcpp (>= 1.0.3)
-LinkingTo: Rcpp
+Title: scBIRD: Single-Cell Regulome Prediction Tool
+Version: 0.1.0
+Author: Kate(Yueyi) Li, Weiqiang Zhou, Hongkai Ji
+Maintainer: Kate(Yueyi) Li <kaeliyueyi2018@gmail.com>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.99.9001
+LinkingTo: 
+    Rcpp
+Imports: 
+    Rcpp,
+    shiny,
+    shinythemes,
+    AnnotationHub,
+    SingleCellExperiment,
+    Seurat,
+    scater,
+    reshape2,
+    dplyr,
+    tidyr,
+    scran
 
