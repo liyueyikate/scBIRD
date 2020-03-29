@@ -6,6 +6,9 @@
 ##                                                  ##
 ######################################################
 
+#options(repos = BiocManager::repositories())
+#getOption("repos")
+
 
 suppressMessages(library(shiny))
 suppressMessages(library(shinythemes))
@@ -19,6 +22,9 @@ suppressMessages(library(tidyr))
 suppressMessages(library(SAVER))
 #suppressMessages(library(igraph))
 suppressMessages(library(scran))
+suppressMessages(library(XVector))
+suppressMessages(library(ensembldb))
+
 
 shinyServer(function(input, output,session) {
 
@@ -31,7 +37,7 @@ shinyServer(function(input, output,session) {
             if(!is.null(FileHandle)){
                 withProgress(message="Reading in",detail="0%",{
                     incProgress(1,detail=paste0(round(100),"%"))
-                    name<-FileHandle$name
+                    #name<-FileHandle$name
                     exp<-readRDS(FileHandle$datapath)
                     Maindata$sce<-SingleCellExperiment(assays = list(counts = exp))
                     Maindata$countMat <- exp
@@ -327,7 +333,13 @@ shinyServer(function(input, output,session) {
         sce_tmp<-Maindata$cluster[Maindata$hvg,]
         dat<-logcounts(sce_tmp)
         write.table(data.frame("gene_id"=rownames((dat)),dat),"donar.txt",row.names=FALSE,quote = F,sep = '\t')
-        bird_predict<-bird_loci(infile="donar.txt",libfile="human_hg19_model.bin",chrom = input$chrom, start=input$start, end=input$end)
+        if (!is.null(input$modelFile)){
+            FileHandle<-input$modelFile
+            bird_predict<-bird_loci(infile="donar.txt",libfile=FileHandle$datapath,chrom = input$chrom, start=input$start, end=input$end)
+        }
+        if(is.null(input$modelFile)){
+            bird_predict<-bird_loci(infile="donar.txt",libfile="human_hg19_model.bin",chrom = input$chrom, start=input$start, end=input$end)
+        }
         colData(sce_tmp)<-cbind(colData(sce_tmp),bird_predict)
         if(input$dim_red_vis=="tsne"){
             output$bird_plot<-renderPlot(plotTSNE(sce_tmp,colour_by=input$bird_plot_label)
