@@ -24,4 +24,5 @@ Imports:
     dplyr,
     tidyr,
     scran
+SystemRequirements: C++11
 
