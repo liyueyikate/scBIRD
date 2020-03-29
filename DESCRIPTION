@@ -27,5 +27,4 @@ Imports:
     HCAdata,
     ensembldb,
     XVector
-SystemRequirements: C++11
 
