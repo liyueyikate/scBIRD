@@ -6,7 +6,7 @@
 ##                                                  ##
 ######################################################
 
-#options(repos = BiocManager::repositories())
+
 #getOption("repos")
 
 
@@ -24,6 +24,8 @@ suppressMessages(library(SAVER))
 suppressMessages(library(scran))
 suppressMessages(library(XVector))
 suppressMessages(library(ensembldb))
+options(repos = BiocManager::repositories())
+suppressMessages(library(HCAData))
 
 
 shinyServer(function(input, output,session) {
@@ -50,10 +52,13 @@ shinyServer(function(input, output,session) {
     observeEvent(input$Inputexample,{
         withProgress(message="Reading in",detail="0%",{
             incProgress(1,detail=paste0(round(100),"%"))
-            exp<-readRDS("example_data.rds")
-            Maindata$sce<-SingleCellExperiment(assays = list(counts = exp))
-            Maindata$countMat <- exp
-            Maindata$summary<-data.frame(Dataset=1,`Number of genes`=nrow(exp),`Number of samples`=ncol(exp))
+            #diskCache(dir = NULL, max_size = Inf）
+            #memoryCache(max_size = Inf)
+            sce_bonemarrow <- HCAData("ica_bone_marrow")
+            #exp<-readRDS("example_data.rds")
+            Maindata$sce<-sce_bonemarrow[, 1:48000]
+            #Maindata$countMat <- exp
+            Maindata$summary<-data.frame(Dataset=1,`Number of genes`=nrow(Maindata$sce),`Number of samples`=ncol(Maindata$sce))
         })
     })
 
@@ -68,7 +73,7 @@ shinyServer(function(input, output,session) {
                                                       paging = F,
                                                       info = F)
                                                   )
-        output$Input_Exp_Mat<-DT::renderDataTable((data.frame(Maindata$countMat[1:50,1:2])),
+        output$Input_Exp_Mat<-DT::renderDataTable((data.frame(counts(Maindata$sce)[1:50,1:2])),
                                                   escape = F,
                                                   options = list(
                                                       searching = F,

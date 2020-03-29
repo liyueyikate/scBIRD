@@ -23,5 +23,8 @@ Imports:
     reshape2,
     dplyr,
     tidyr,
-    scran
+    scran,
+    HCAdata,
+    ensembldb,
+    XVector
 
