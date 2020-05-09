@@ -24,7 +24,8 @@ Imports:
     dplyr,
     tidyr,
     scran,
-    HCAdata,
+    HCAData,
     ensembldb,
-    XVector
+    XVector,
+    readr
 

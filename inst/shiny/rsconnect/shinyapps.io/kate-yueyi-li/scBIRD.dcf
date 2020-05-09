@@ -1,0 +1,13 @@
+name: scBIRD
+title: scBIRD
+username:
+account: kate-yueyi-li
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2013526
+bundleId: 3122954
+url: https://kate-yueyi-li.shinyapps.io/scBIRD/
+when: 1588987412.26862
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: donar.txt|example_data.rds

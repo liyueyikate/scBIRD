@@ -4,7 +4,7 @@
 
 using namespace std;
 //[[Rcpp::export]]
-Rcpp::StringVector getLoci(Rcpp::CharacterVector libfile0="./src/human_hg19_model.bin"){
+Rcpp::StringVector getLoci(Rcpp::CharacterVector libfile0){
   std::string sep_str = ".";
 
   // initialize cpp data structure to hold rcpp data structure

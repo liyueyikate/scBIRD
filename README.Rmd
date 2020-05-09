@@ -7,7 +7,7 @@ output: md_document
 <!-- badges: start -->
 <!-- badges: end -->
 
-This package provides a graphical user interface to predict and visualize chromatin accessibility using singe-cell RNA-seq. scBIRD is also available online at 
+This package provides a graphical user interface to predict and visualize chromatin accessibility using singe-cell RNA-seq.
 
 ## Installation
 
@@ -32,7 +32,7 @@ scBIRD user manual is available on Github:
 
 ## BIRD prediction models
 
-Four prebuilt models by Weiqiang Zhou for BIRD are available:
+Four prebuilt models for BIRD are available:
 
 1. RNA-seq model, current release (trained with 167 ENCODE samples):
 https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.3/human_hg19_model.bin.zip
@@ -48,9 +48,9 @@ https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.1/Exonarray_mode
 
 ## Contact 
 
-Author: Kate(Yueyi) Li, Weiqiang Zhou, Hongkai Ji
+Author: Kate(Yueyi) Li, Weiqiang Zhou, Runzhe Li, Hongkai Ji
 
-Maintainer: Yueyi Li (kateliyueyi2018@gmail.com)
+Maintainer: Kate(Yueyi) Li (kateliyueyi2018@gmail.com)
 
 
 

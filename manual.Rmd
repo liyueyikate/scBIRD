@@ -1,0 +1,10 @@
+---
+title: "scBIRD User Interface Manual"
+output: pdf_document
+author: Yueyi Li, Weiqiang Zhou, Hongkai Ji
+date: April 20, 2020
+---
+
+## 1 Install scBIRD 
+## 2 Data uploadidng
+

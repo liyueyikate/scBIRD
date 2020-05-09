@@ -5,7 +5,7 @@ bird <- function(infile0, outfile0, outfile_expr0, libfile0 = "./src/human_hg19_
     .Call('_scBIRD_bird', PACKAGE = 'scBIRD', infile0, outfile0, outfile_expr0, libfile0, locus_model, up_bound, match_mode, write_flag)
 }
 
-getLoci <- function(libfile0 = "./src/human_hg19_model.bin") {
+getLoci <- function(libfile0) {
     .Call('_scBIRD_getLoci', PACKAGE = 'scBIRD', libfile0)
 }
 

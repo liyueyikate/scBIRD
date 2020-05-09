@@ -1,4 +1,4 @@
-bird_loci<-function(infile,libfile="./src/human_hg19_model.bin",chrom,start,end){
+bird_loci<-function(infile,libfile,chrom,start,end){
   #get all the locus
   loci<-unlist(strsplit(getLoci(libfile0=libfile),split="\t"))
   loci_chrom=loci[seq(1,length(loci),3)]

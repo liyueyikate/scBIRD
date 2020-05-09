@@ -543,7 +543,7 @@ int WriteWIG(double **data_out, char **select_idx, std::vector<std::string> outn
 	int startsite, count;
 	double value;
 	FILE * pFile;
- // FILE * bFile;
+
 	//standard output
 	if (flag != 1)
 	{

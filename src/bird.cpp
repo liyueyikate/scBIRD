@@ -127,14 +127,10 @@ Rcpp::NumericMatrix bird(Rcpp::CharacterVector infile0, Rcpp::CharacterVector ou
   }
 
 
-  //Kate wrote: create another variable to hold the whole loci size. if the user only want selected loci, then change loci_size to the user specific.
-  //int loci_size0=loci_size;
-  //done
-
   //check chromosome
-  char **select_loci0 = select_loci;
-  std::cout <<select_loci0[2] << std::endl;
-  std::cout <<loci_size << std::endl;
+ // char **select_loci0 = select_loci;
+  //std::cout <<select_loci0[2] << std::endl;
+  //std::cout <<loci_size << std::endl;
 
 
   if (ReadinExon(infile, indata))
