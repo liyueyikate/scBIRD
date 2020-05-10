@@ -26,7 +26,7 @@ shinyUI(
       hr(),
       h3(strong("Overview")),
       p("In  order  to  decode  gene  regulatory  network,
-        we  need  to  understand  the mechanism of both transcriptome and regulome.
+        we  need  to  understand both transcriptome and regulome.
         Recent proliferation of powerful methods has enabled measuring transcriptional activities and regulatory element activities at single-cell levels.
         For example, single-cell ATAC-seq(scATAC-seq), single-cell ChIP-seq(scChIP-seq), single-cell DNase-seq (scDNase-seq)  have been developed for analyzing regulome in individual cells.
         However, the signals obtained from those assays are often discrete and sparse.
@@ -40,8 +40,8 @@ shinyUI(
       (img(src='pipeline.png', width="30%")),
       br(),
       h3(strong("Contact")),
-      h4(strong("Author: Kate(Yueyi) Li, Weiqiang Zhou, Hongkai Ji")),
-      h4(strong("Maintainer: Kate(Yueyi) Li: yli324@jhu.edu"))
+      h4(strong("Author: Kate(Yueyi) Li, Weiqiang Zhou, Runzhe Li, Hongkai Ji")),
+      h4(strong("Maintainer: Kate(Yueyi) Li: kateliyueyi2018@gmail.com"))
     ),
 
     ##start analysis
@@ -142,7 +142,7 @@ shinyUI(
         fluidRow(plotOutput("normalizationg_boxplot"),align="center"),
         br(),
         fluidRow(column(6,actionButton("random_sample","Random sample 50 cells")),
-                 column(6,actionButton("log_normalize","Log Normalize")),
+                 column(6,actionButton("log_normalize","Log normalize")),
                  align="center"),
         br(),
         fluidRow(actionButton("nextNomalization","Next"),align="center"),
@@ -203,7 +203,7 @@ shinyUI(
                      br(),
                      uiOutput("k"),
                      br(),
-                     actionButton("cluster","Run Cluster")
+                     actionButton("cluster","Run cluster")
         ),
         mainPanel(fluidRow(plotOutput("clustering_plot"),align="center"),
                   br(),
@@ -252,12 +252,7 @@ shinyUI(
                      fluidRow(actionButton("bird_loci","Bird loci"),
                               actionButton("bird_gene","Bird gene")
                               ),
-                     # br(),
-                     # textInput("gene_nearby",tags$strong(HTML('<p style="font-size: 12pt">Ensembl ID for nearby locus</p>')),
-                     #              value="ENSG00000136997",
-                     #              width ='150px'),
-                     #br(),
-                     #br(),
+
                      br(),
                      selectInput("bird_plot_label",
                                  tags$strong(HTML('<p style="font-size: 12pt">Cell labels</p>')),
