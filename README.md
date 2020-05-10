@@ -4,7 +4,7 @@ scBIRD
 <!-- badges: start -->
 <!-- badges: end -->
 This package provides a graphical user interface to predict and
-visualize chromatin accessibility using singe-cell RNA-seq.
+visualize chromatin accessibility using singe-cell RNA-seq data.
 
 Installation
 ------------
@@ -12,9 +12,6 @@ Installation
 scBIRD can be installed from github:
 
     devtools::install_github("liyueyikate/scBIRD")
-
-Example
--------
 
 To launch the graphical user interface, run the following command in R:
 
@@ -24,27 +21,30 @@ To launch the graphical user interface, run the following command in R:
 scBIRD User Manual
 ------------------
 
-scBIRD user manual is available on
-Github:<a href="https://github.com/liyueyikate/scBIRD/blob/master/manual.pdf" class="uri">https://github.com/liyueyikate/scBIRD/blob/master/manual.pdf</a>
+scBIRD [user
+manual](https://github.com/liyueyikate/scBIRD/blob/master/manual.pdf) is
+available on Github.
 
 BIRD prediction models
 ----------------------
 
 Four prebuilt models for BIRD are available:
 
-1.  RNA-seq model, current release (trained with 167 ENCODE samples):
-    <a href="https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.3/human_hg19_model.bin.zip" class="uri">https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.3/human_hg19_model.bin.zip</a>
+-   [RNA-seq
+    model](https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.3/human_hg19_model.bin.zip),
+    current release (trained with 167 ENCODE samples).
 
-2.  RNA-seq model, previous release (trained with 70 Epigenome Roadmap
-    samples):
-    <a href="https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.2/RNAseq_model_file.bin.zip" class="uri">https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.2/RNAseq_model_file.bin.zip</a>
+-   [RNA-seq
+    model](https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.2/RNAseq_model_file.bin.zip),
+    previous release (trained with 70 Epigenome Roadmap samples).
 
-3.  RNA-seq model for 2 million loci, previous release (trained with 70
-    Epigenome Roadmap samples):
-    <a href="https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.0/RNAseq_model_file_2M.bin.zip" class="uri">https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.0/RNAseq_model_file_2M.bin.zip</a>
+-   [RNA-seq
+    model](https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.0/RNAseq_model_file_2M.bin.zip)
+    for 2 million loci, previous release (trained with 70 Epigenome
+    Roadmap samples)
 
-4.  Exon Array model:
-    <a href="https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.1/Exonarray_model_file.bin.zip" class="uri">https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.1/Exonarray_model_file.bin.zip</a>
+-   [Exon Array
+    model](https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.1/Exonarray_model_file.bin.zip)
 
 Contact
 -------
