@@ -24,7 +24,8 @@ To launch the graphical user interface, run the following command in R:
 scBIRD User Manual
 ------------------
 
-scBIRD user manual is available on Github:
+scBIRD user manual is available on
+Github:<a href="https://github.com/liyueyikate/scBIRD/blob/master/manual.pdf" class="uri">https://github.com/liyueyikate/scBIRD/blob/master/manual.pdf</a>
 
 BIRD prediction models
 ----------------------
