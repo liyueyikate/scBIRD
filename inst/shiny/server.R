@@ -7,8 +7,6 @@
 ######################################################
 
 
-#getOption("repos")
-
 
 suppressMessages(library(shiny))
 suppressMessages(library(shinythemes))

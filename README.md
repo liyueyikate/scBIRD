@@ -23,7 +23,8 @@ scBIRD User Manual
 
 scBIRD [user
 manual](https://github.com/liyueyikate/scBIRD/blob/master/manual.pdf) is
-available on Github.
+available on Github. To get a quick overview of scBIRD, check our
+[YouTube](https://youtu.be/wA4WAWnijIQ) video.
 
 BIRD prediction models
 ----------------------

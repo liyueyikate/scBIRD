@@ -49,7 +49,7 @@ total variance, the technical component for the genes are estimated by the fitte
 <img style="float: right;" src="/Users/yueyili/Desktop/manual/gene_select.png">
 ![Figure 5: Screenshot demonstrating step 4: Feature selection](/Users/yueyili/Desktop/manual/gene_select.png)
 
-## 6 Dimension reduction and clustering
+## 6 Dimension reduction and clustering 
 
 Principal components analysis is first performed to reduce the data into 30 dimensions using the genes selected in the feature selection step. Then the data is further compressed into 2 dimensions using t-stochastic neighbor embedding (T-SNE) or uniform manifold approximation and projection (UMAP) by the user's choice (Dimension reduction in Figure 6) . 
 
@@ -58,7 +58,7 @@ Two clustering methods are provided: graph-based clustering and k-means. Users n
 ![Figure 6: Screenshot demonstrating step 5: Clustering](/Users/yueyili/Desktop/manual/cluster.png)
 ## 7 Bird prediction
 
-Before performing BIRD prediction, one need to have a training model. Four models prebuilt by Weiqiang Zhou are available for BIRD:
+Before performing BIRD prediction, users need to have a training model. Four models prebuilt by Weiqiang Zhou are available:
 
 [RNA-seq model, current release (trained with 167 ENCODE samples)](https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.3/human_hg19_model.bin.zip)
 
@@ -68,7 +68,7 @@ Before performing BIRD prediction, one need to have a training model. Four model
 
 [Exon Array model](https://github.com/WeiqiangZhou/BIRD-model/releases/download/v1.1/Exonarray_model_file.bin.zip)
 
-Upload the model bin file from local. The genomic loci are selected based on their  signal in the training DNase-seq samples. scBIRD could also output a vector of aggregate signals for a set of user-selected genomics regions. The genomic regions could be specified by chromosome, start and end. User could also choose a gene and the aggregate signals for the nearby loci will be predicted. The loci are match to nearest genes using HOMER. Predictions are performed on all the loci matched to the selected gene. 
+Upload the model bin file from local. scBIRD could output a vector of aggregate signals for a set of user-selected genomics regions. Users need to specify the chromosome, start and end and press the button "Bird loci" (Figure 7). User could also give the Ensembl ID of a gene and click "Bird gene". The aggregate signals for the nearby loci will be predicted. The loci are match to nearest genes using HOMER. Predictions are performed on all the loci matched to the selected gene. 
 
 
 
